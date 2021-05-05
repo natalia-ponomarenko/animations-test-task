@@ -1,0 +1,129 @@
+.contacts {
+  &__title {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    animation: title 1s 1;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      bottom: 12px;
+      height: 1px;
+      background-color: $accent-color;
+      content: "";
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.5s ease-out;
+    }
+
+      &:hover:before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -5px;
+    width: 37px;
+    height: 37px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: $light-color;
+    border: none;
+    color: $accent-color;
+    z-index: 2;
+
+    &:after {
+      content:"\00D7";
+      color: $accent-color;
+      z-index: 10;
+      font-size: 19px;
+      font-weight: bold;
+      transform: rotate(45deg);
+      transition: transform 1s;
+    }
+
+    &:hover:after {
+      transform:rotate(90deg);
+      -ms-transform:rotate(360deg);
+      -webkit-transform:rotate(360deg);
+    }
+  }
+
+  &__line {
+    width: 80%;
+    background-color: $elements-color;
+    height: 1px;
+    margin-top: 23px;
+  }
+
+  &__content {
+    opacity: 0;
+    position: absolute;
+    left: 22px;
+    margin-right: 5px;
+    background-color: $light-color;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 1;
+    display: flex;
+    transition: opacity 1s linear;
+  }
+
+  &__dropdown {
+    position: relative;
+    display: inline-block;
+    animation: title 1s 1;
+  }
+
+  &__dropdown:hover .contacts__content {
+    opacity: 1;
+  }
+
+  &__messengers-item {
+    padding: 8px 10px;
+    display: block;
+  }
+
+  &__item {
+    padding: 8px 10px;
+  }
+
+  &__svg {
+    fill: $semi-dark-color;
+  }
+
+  &__svg-small {
+    fill: $very-light-color;
+  }
+
+  &__messengers-item:hover .contacts__svg {
+    fill: $accent-color;
+  }
+}
+
+@keyframes title {
+  from {
+    bottom: -20px;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1;
+  }
+}

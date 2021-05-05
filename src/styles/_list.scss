@@ -1,0 +1,62 @@
+.list {
+  display: flex;
+  gap: 86px;
+  padding-right: 400px;
+  font-size: 117%;
+
+  &__item {
+    color: $elements-color;
+    background-color: $main-color;
+    position: relative;
+    display: flex;
+    padding: 5px;
+    border: none;
+
+    &:after {
+      content: "";
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background-color: $accent-color;
+      position: absolute;
+      top: 15px;
+      left: 100%;
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $accent-color;
+    }
+
+    &:hover:after {
+      display: block;
+    }
+  }
+
+  &__item--1 {
+    animation: list_item 0.5s 1;
+  }
+
+  &__item--2 {
+    animation: list_item 0.8s 1;
+  }
+
+  &__item--3 {
+    animation: list_item 1.2s 1;
+  }
+
+  &__item--4 {
+    animation: list_item 1.5s 1;
+  }
+}
+
+@keyframes list_item {
+  from {
+    bottom: -30px;
+  }
+
+  to {
+    bottom: 0;
+  }
+}

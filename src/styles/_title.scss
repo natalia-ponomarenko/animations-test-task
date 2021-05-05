@@ -1,0 +1,27 @@
+.title {
+  display: flex;
+  position: relative;
+  align-items: baseline;
+  line-height: 78px;
+  animation: slow_moving_up 1.5s 1;
+
+
+  &__name {
+    font-size: 666%;
+    letter-spacing: -4px;
+  }
+
+  &__subtitle {
+    font-size: 133%;
+  }
+}
+
+@keyframes slow_moving_up {
+  from {
+    bottom: -80px;
+  }
+
+  to {
+    bottom: 0;
+  }
+}

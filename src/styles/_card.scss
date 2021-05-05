@@ -1,0 +1,143 @@
+.card {
+  animation: 1s appear;
+  margin: auto;
+  padding: 45px 45px 0 45px;
+  background-color: $main-color;
+  overflow: hidden;
+
+  &__contacts {
+    display: flex;
+    padding-left: 280px;
+    letter-spacing: 1px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    color: $accent-color;
+  }
+
+  &__wrapper {
+    position: relative;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__lang-main-wrapper {
+    position: relative;
+    top: 200px;
+    left: -70px;
+  }
+
+  &__menu-wrapper {
+    position: relative;
+  }
+
+  &__list-wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__menu {
+    display: flex;
+    margin-top: 30px;
+    position: relative;
+    top: -30px
+  }
+
+  &__language--english {
+    border: none;
+    background-color:$main-color
+  }
+
+
+  &__languages-dropdown {
+    display: flex;
+    margin: 80px 0 80px 0;
+  }
+
+  &__languages-content {
+    display: flex;
+    opacity: 0;
+    transition: opacity 1s linear;
+  }
+
+  &__languages-dropdown:hover .card__languages-content {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+  }
+
+  &__language {
+    margin-right: 15px;
+    font-size: 16px;
+    opacity: 0.7;
+
+    &:hover {
+      color: $accent-color;
+      cursor: pointer;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    top: 25px;
+    left: 100px;
+    height: 500px;
+    // max-width: 1100px;
+    width: 1000px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    animation: movement 2s ease-out;
+  }
+
+  &__image {
+    height: 545px;
+  }
+
+  &__opening {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 237px;
+    height: 122px;
+    background-color: $accent-color;
+    bottom: 0;
+    font-size: 15px;
+    line-height: 153%;
+    text-transform: uppercase;
+  }
+
+    &__opening-text {
+      position: relative;
+      color: $very-light-color;
+      text-decoration: none;
+
+      &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: -8px;
+      width: 30%;
+      height: 1px;
+      background-color: $very-light-color;
+      transition: width 0.5s ease-out;
+    }
+  }
+
+    &__opening-text:hover:after {
+        width: 100%;
+      }
+}
+
+@keyframes movement {
+  from {
+    transform: translateX(900px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
