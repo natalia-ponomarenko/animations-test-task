@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RIBS test task</title>
     <link rel="stylesheet" href="./styles/main.scss">
-    <script src="./scripts/main.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   </head>
   <body>
     <div class="card">
@@ -55,10 +55,10 @@
       <div class="card__wrapper">
         <div class="card__list-wrapper">
           <div class="card__list list">
-            <button type="button" class="list__item list__item--1">I</button>
-            <button type="button" class="list__item list__item--2">II</button>
-            <button type="button" class="list__item list__item--3">III</button>
-            <button type="button" class="list__item list__item--4">IV</button>
+            <button type="button" class="list__item list__item--1" onclick="changePicture">I</button>
+            <button type="button" class="list__item list__item--2" onclick="changePicture">II</button>
+            <button type="button" class="list__item list__item--3" onclick="changepicture">III</button>
+            <button type="button" class="list__item list__item--4" onclick="changePicture">IV</button>
           </div>
           <div class="card__title title">
             <span class="title__name">
@@ -115,16 +115,35 @@
           </div>
         </div>
 
-        <div class="card__image-wrapper" id="app">
-          <img src="./images/1.jpg" alt="Interior" class="card__image1">
-          <img src="./images/3.jpg" alt="wooden house" class="card__image">
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" name="img" src="./images/1.jpg">
+              <img src="./images/1.jpg" alt="Interior" class="card__image1">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/2.png" alt="wooden house" class="card__image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/3.jpg" alt="wooden house" class="card__image">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/4.jpg" alt="wooden house" class="card__image">
+            </div>
+          </div>
+          <!-- <div class="swiper-pagination"></div> -->
           <div class="card__opening">
             <a href="#" class="card__opening-text">Open project</a>
           </div>
         </div>
-  
+
+      
+
+      <!-- </div> -->
+    
       </div>
     </div>
+    <script src="./scripts/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
 
