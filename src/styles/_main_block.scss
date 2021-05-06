@@ -2,31 +2,32 @@
   &__list {
     list-style: none;
     text-transform: uppercase;
+    color: $text-color;
   }
 
   &__item {
     position: relative;
-    font-size: 18px;
-    text-decoration: none;
     color: $text-color;
+    font-size: $font-half-size;
     opacity: 0.7;
-    animation: slow_moving_up 1s 1;
+    text-decoration: none;
     background-color: $main-color;
+    animation: slow_moving_up 1s 1;
 
-    &:before {
-      position: absolute;
-      left: 0;
+    &::before {
       bottom: 0;
-      width: 0;
+      content: '';
       height: 1.5px;
-      background-color: $text-color;
+      left: 0;
+      width: 0;
       opacity: 0.7;
-      content: "";
+      position: absolute;
+      background-color: $text-color;
       transition: width 0.5s ease-out;
     }
 
-      &:hover:before {
-        width: 100%;
+    &:hover::before {
+      width: 100%;
     }
   }
 
@@ -37,24 +38,23 @@
   }
 
   &__item-no-effects {
-      margin-bottom : 16px;
-      text-decoration: underline;
+    margin-bottom: 16px;
+    text-decoration: underline;
   }
 
-  &__item--projects:after {
-    content: " .52";
+  &__item--projects::after {
     color: $accent-color;
+    content: ' .52';
   }
 
   &__item-home {
     position: relative;
-    font-size: 18px;
-    text-decoration: none;
-    color: $text-color;
     opacity: 0.7;
-    position: relative;
-    animation: slow_moving_up 1s 1;
+    font-size: $font-half-size;
+    text-decoration: none;
     background-color: $main-color;
+    color: $text-color;
+    animation: slow_moving_up 1s 1;
   }
 }
 

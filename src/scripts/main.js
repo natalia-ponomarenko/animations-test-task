@@ -1,17 +1,10 @@
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
-import SwiperCore, { Navigation, Pagination } from 'swiper/core';
+import SwiperCore, { Navigation } from 'swiper/core';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation]);
 
-const swiper = new Swiper(".mySwiper", {
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  },
+const swiper = new Swiper('.mySwiper', {
   navigation: {
     nextEl: '.navigation__button',
     prevEl: '.navigation__button--left',
@@ -19,13 +12,10 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 const listOfButtons = document.querySelector('.card__list');
-console.log(listOfButtons);
-let visibleSlide = document.querySelector('#img');
-console.log(visibleSlide.src);
+const visibleSlide = document.querySelector('#img');
 
 listOfButtons.addEventListener('click', (event) => {
   const { number } = event.target.dataset;
   visibleSlide.src = `https://raw.githubusercontent.com/natalia-ponomarenko/images-for-test/main/${number}.jpg`;
-  console.log(visibleSlide.src);
   return visibleSlide;
 });

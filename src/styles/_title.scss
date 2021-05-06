@@ -1,18 +1,18 @@
 .title {
-  display: flex;
-  position: relative;
-  align-items: baseline;
-  line-height: 78px;
+  @include baseline-flex;
   animation: slow_moving_up 1.5s 1;
+  line-height: 5.2em;
+  position: relative;
 
 
   &__name {
-    font-size: 666%;
+    font-size: $font-huge;
     letter-spacing: -4px;
+    color: $text-color;
   }
 
   &__subtitle {
-    font-size: 133%;
+    font-size: $font-middle-plus;
   }
 }
 

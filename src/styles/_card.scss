@@ -1,30 +1,30 @@
 .card {
-  animation: 1s appear;
-  margin: auto;
-  padding: 45px 45px 0 45px;
   background-color: $main-color;
+  margin: auto;
   overflow: hidden;
+  padding: 45px 45px 0;
+  animation: 1s appear;
 
   &__contacts {
     display: flex;
     padding-left: 280px;
+    font-size: $font-middle;
     letter-spacing: 1px;
-    font-size: 1.25em;
     text-transform: uppercase;
     color: $accent-color;
   }
 
   &__wrapper {
     position: relative;
-    left: 0;
     display: flex;
     justify-content: flex-end;
+    left: 0;
   }
 
   &__lang-main-wrapper {
     position: relative;
-    top: 200px;
     left: -70px;
+    top: 200px;
   }
 
   &__menu-wrapper {
@@ -33,99 +33,91 @@
   }
 
   &__list-wrapper {
-    display: flex;
-    align-items: baseline;
+    @include baseline-flex;
   }
 
   &__menu {
-    display: flex;
+    @include flex-spaced;
     margin-top: 30px;
     position: relative;
     top: -30px;
-    justify-content: space-between;
   }
 
   &__language--english {
-    border: none;
-    background-color:$main-color
+    background-color: $main-color;
+    border-style: none;
   }
-
 
   &__languages-dropdown {
     display: flex;
-    margin: 80px 0 80px 0;
+    margin: 80px 0;
   }
 
   &__languages-content {
     display: flex;
     opacity: 0;
+    color: $text-color;
     transition: opacity 1s linear;
   }
 
   &__languages-dropdown:hover .card__languages-content {
-    display: flex;
-    align-items: center;
+    @include centered-flex;
     opacity: 1;
   }
 
   &__language {
     margin-right: 15px;
-    font-size: 16px;
+    font-size: $font-middle-plus;
     opacity: 0.7;
 
     &:hover {
-      color: $accent-color;
       cursor: pointer;
+      color: $accent-color;
     }
   }
 
   &__image {
-    width: 100%;
-    height: 100%;
+    @include full-size;
   }
 
   &__image1 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+    @include full-size;
   }
 
   &__opening {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include centered-flex;
     width: 237px;
-    height: 122px;
-    background-color: $accent-color;
     bottom: 0;
-    font-size: 15px;
+    height: 122px;
+    font-size: $font-middle;
+    justify-content: center;
     line-height: 153%;
     text-transform: uppercase;
+    background-color: $accent-color;
     z-index: 2;
   }
 
-    &__opening-text {
-      position: relative;
-      color: $very-light-color;
-      text-decoration: none;
+  &__opening-text {
+    position: relative;
+    color: $very-light-color;
+    text-decoration: none;
 
-      &::after {
+    &::after {
       position: absolute;
-      content: "";
-      left: 0;
-      bottom: -8px;
-      width: 30%;
-      height: 1px;
       background-color: $very-light-color;
+      content: '';
+      bottom: -8px;
+      height: 1px;
+      left: 0;
       transition: width 0.5s ease-out;
+      width: 30%;
     }
   }
 
-    &__opening-text:hover:after {
-        width: 100%;
-      }
+  &__opening-text:hover::after {
+    width: 100%;
+  }
 }
 
 @keyframes movement {
@@ -137,4 +129,3 @@
     transform: translateX(0);
   }
 }
-

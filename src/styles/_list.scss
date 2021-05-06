@@ -1,35 +1,35 @@
 .list {
   display: flex;
+  font-size: $font-small;
   gap: 86px;
   padding-right: 400px;
-  font-size: 117%;
 
   &__item {
-    color: $elements-color;
     background-color: $main-color;
-    position: relative;
+    border-style: none;
+    color: $elements-color;
     display: flex;
     padding: 5px;
-    border: none;
+    position: relative;
 
-    &:after {
-      content: "";
-      width: 2px;
-      height: 2px;
-      border-radius: 50%;
+    &::after {
       background-color: $accent-color;
+      border-radius: 50%;
+      content: '';
+      display: none;
+      height: 2px;
+      left: 100%;
       position: absolute;
       top: 15px;
-      left: 100%;
-      display: none;
+      width: 2px;
     }
 
     &:hover {
-      cursor: pointer;
       color: $accent-color;
+      cursor: pointer;
     }
 
-    &:hover:after {
+    &:hover::after {
       display: block;
     }
   }
