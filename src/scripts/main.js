@@ -18,18 +18,35 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
+const one = document.querySelector('#1');
+let visibleSlide = document.querySelector('#img');
 
-function changePicture(id){
-let image = document.getElementById(id);
-  if (el.src.indexOf("images/widget_country_button_on.png")>0){
-  el.src="images/widget_country_button_off.png";
-}
+one.addEventListener('click', () => {
+  visibleSlide.src="./images/2.png";
+  console.log('pressed');
+});
 
-else{
 
-el.src="images/widget_country_button_on.png";
+// onclick.function changePicture(id) {
+//   let visibleSlide = document.getElementById('img');
+//   console.log(document.getElementById('img'));
+//     if (id === 1) {
+//       visibleSlide.src="./images/1.jpg";
+//     }
+  
+//     if (id === 2) {
+//       visibleSlide.src="./images/2.png";
+//     }
+  
+//     if (id === 3) {
+//       visibleSlide.src="./images/3.jpg";
+//     }
+  
+//     if (id === 4) {
+//       visibleSlide.src="./images/4.jpg";
+//     }
+  
+//     return visibleSlide;
+//   }
 
-}
-
-}
 
