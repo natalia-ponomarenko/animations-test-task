@@ -18,35 +18,14 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
-const one = document.querySelector('#1');
+const listOfButtons = document.querySelector('.card__list');
+console.log(listOfButtons);
 let visibleSlide = document.querySelector('#img');
+console.log(visibleSlide.src);
 
-one.addEventListener('click', () => {
-  visibleSlide.src="./images/2.png";
-  console.log('pressed');
+listOfButtons.addEventListener('click', (event) => {
+  const { number } = event.target.dataset;
+  visibleSlide.src = `https://raw.githubusercontent.com/natalia-ponomarenko/images-for-test/main/${number}.jpg`;
+  console.log(visibleSlide.src);
+  return visibleSlide;
 });
-
-
-// onclick.function changePicture(id) {
-//   let visibleSlide = document.getElementById('img');
-//   console.log(document.getElementById('img'));
-//     if (id === 1) {
-//       visibleSlide.src="./images/1.jpg";
-//     }
-  
-//     if (id === 2) {
-//       visibleSlide.src="./images/2.png";
-//     }
-  
-//     if (id === 3) {
-//       visibleSlide.src="./images/3.jpg";
-//     }
-  
-//     if (id === 4) {
-//       visibleSlide.src="./images/4.jpg";
-//     }
-  
-//     return visibleSlide;
-//   }
-
-
