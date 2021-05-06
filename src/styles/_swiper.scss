@@ -2,6 +2,7 @@
   height: 525px !important;
   margin-top: 10px;
   width: 970px !important;
+  animation: movement 2s ease-out;
 }
 
 .swiper-slide {
@@ -11,4 +12,14 @@
 .swiper-container {
   display: flex;
   justify-content: flex-end;
+}
+
+@keyframes movement {
+  from {
+    transform: translateX(900px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
