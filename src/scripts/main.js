@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
-import SwiperCore, { Navigation } from 'swiper/core';
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Pagination]);
 
 const swiper = new Swiper('.mySwiper', {
   navigation: {
@@ -12,10 +12,7 @@ const swiper = new Swiper('.mySwiper', {
 });
 
 const listOfButtons = document.querySelector('.card__list');
-const visibleSlide = document.querySelector('#img');
-
 listOfButtons.addEventListener('click', (event) => {
   const { number } = event.target.dataset;
-  visibleSlide.src = `https://raw.githubusercontent.com/natalia-ponomarenko/images-for-test/main/${number}.jpg`;
-  return visibleSlide;
+  swiper.slideTo(number);
 });

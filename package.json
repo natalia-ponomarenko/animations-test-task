@@ -2,13 +2,19 @@
   "name": "animations-test-task",
   "version": "1.0.0",
   "description": "animations-test-task",
-  "main": "src/index.html",
+  "main": "docs/index.html",
+  "targets": {
+    "main": {
+      "publicUrl": ".",
+      "distDir": "docs"
+    }
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rm -rf ./docs",
-    "build": "parcel build --out-dir docs --public-url ./ ./src/index.html",
+    "build": "parcel build ./src/index.html",
     "start": "parcel serve ./src/index.html --open",
     "lint-js": "eslint ./src",
     "lint-js:fix": "eslint ./src --fix",
@@ -37,13 +43,14 @@
   },
   "homepage": "https://github.com/natalia-ponomarenko/animations-test-task",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
     "concurrently": "^6.0.2",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "gh-pages": "^3.1.0",
     "husky": "^6.0.0",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.0.0-beta.2",
     "sass": "^1.32.10",
     "stylelint": "^13.12.0",
     "stylelint-config-sass-guidelines": "^8.0.0"
